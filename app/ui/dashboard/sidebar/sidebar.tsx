@@ -100,10 +100,9 @@ const Sidebar = () => {
                 display: "flex", 
                 flexDirection: "column", 
                 position: "sticky", 
-                top: "40px", 
+                top: "8px", 
                 height: "100vh", 
                 justifyContent: "space-between" ,
-                paddingBottom: "40px" 
             }}>
             <Box display="flex" alignItems="center" p={2} borderBottom="1px solid #ddd">
                 <Typography variant="h6">{userName}</Typography>
@@ -123,12 +122,12 @@ const Sidebar = () => {
                         </ul>
                     </div>
                 ))}
-            </div>
             <Button sx={{
                 color: "#0c0238",
                 padding: "8px",
                 backgroundColor: "white",
                 fontWeight: "bold",
+                width: "100%",
                 borderRadius: "8px",
                 '&:hover': {
         backgroundColor: "#003366",
@@ -137,6 +136,7 @@ const Sidebar = () => {
             }} onClick={handleLogout}>
                 <LogoutIcon sx={{ marginRight: "8px" }} />Logout
             </Button>
+            </div>
         </div>
     );
 };
