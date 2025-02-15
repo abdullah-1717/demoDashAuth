@@ -1,7 +1,7 @@
 
 {
-    "name": "demo",
-    "short_name": "demo",
+    "name": "DemoDashAuth",
+    "short_name": "DashAuth",
     "description": "",
     "start_url": "/",
     "display": "standalone",
