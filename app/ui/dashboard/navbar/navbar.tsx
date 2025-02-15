@@ -26,62 +26,96 @@ const Navbar = () => {
     };
 
     return (
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', p: 2 }}>
-            <Typography variant="h6" style={{
-              textTransform: "capitalize",
-              fontWeight: "bold"
-            }}>
+        <Box
+            sx={{
+                display: 'flex', // Ensure all elements are in a single row
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                p: 2,
+                gap: 2, // Add gap between elements for spacing
+                flexWrap: 'nowrap', // Ensure no wrapping occurs
+                width: '100%', // Ensure the width of navbar is 100% of parent container
+            }}
+        >
+            {/* Title section */}
+            <Typography
+                variant="h6"
+                style={{
+                    textTransform: "capitalize",
+                    fontWeight: "bold",
+                    marginBottom: 0, // Remove bottom margin
+                }}
+            >
                 {currentPage ? `${currentPage}` : 'No Page Selected'}
             </Typography>
-            <Box sx={{ display: 'flex', gap: 2 }}>
+
+            <Box
+                sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 2, // Add gap between search bar and icons
+                    flexGrow: 1, // Allow this section to grow to take remaining space
+                    justifyContent: 'flex-end', // Align icons to the right of the navbar
+                }}
+            >
+                {/* Only show TextField (Search Bar) on larger screens */}
                 <TextField
-                    sx={{ maxWidth: 200, backgroundColor: "white", borderRadius: "8px", padding: "4px" }}
+                    sx={{
+                        maxWidth: 200,
+                        backgroundColor: "white",
+                        borderRadius: "8px",
+                        padding: "4px",
+                        display: { xs: 'none', sm: 'block' }, // Hide on small screens, show on large screens
+                    }}
                     variant="standard"
                     size="small"
-                    fullWidth
                     placeholder="Search...."
                     value={searchQuery}  // Bind input value to the state
                     onChange={(e) => setSearchQuery(e.target.value)}  // Update search state on input change
                     onKeyDown={handleKeyDown}  // Handle key press events
                 />
-                <IconButton
-                    color="inherit"
-                    aria-label="notifications"
-                    sx={{
-                        color: 'white',
-                        '&:hover': {
-                            color: '#1976d2',
-                        }
-                    }}
-                >
-                    <NotificationsIcon />
-                </IconButton>
+                
+                {/* Icons container */}
+                <Box sx={{ display: 'flex', gap: 1 }}>
+                    <IconButton
+                        color="inherit"
+                        aria-label="notifications"
+                        sx={{
+                            color: 'white',
+                            '&:hover': {
+                                color: '#1976d2',
+                            },
+                        }}
+                    >
+                        <NotificationsIcon />
+                    </IconButton>
 
-                <IconButton
-                    color="inherit"
-                    aria-label="chat"
-                    sx={{
-                        color: 'white',
-                        '&:hover': {
-                            color: '#1976d2',
-                        }
-                    }}
-                >
-                    <ChatIcon />
-                </IconButton>
+                    <IconButton
+                        color="inherit"
+                        aria-label="chat"
+                        sx={{
+                            color: 'white',
+                            '&:hover': {
+                                color: '#1976d2',
+                            },
+                        }}
+                    >
+                        <ChatIcon />
+                    </IconButton>
 
-                <IconButton
-                    color="inherit"
-                    aria-label="public"
-                    sx={{
-                        color: 'white',
-                        '&:hover': {
-                            color: '#1976d2',
-                        }
-                    }}
-                >
-                    <PublicIcon />
-                </IconButton>
+                    <IconButton
+                        color="inherit"
+                        aria-label="public"
+                        sx={{
+                            color: 'white',
+                            '&:hover': {
+                                color: '#1976d2',
+                            },
+                        }}
+                    >
+                        <PublicIcon />
+                    </IconButton>
+                </Box>
             </Box>
         </Box>
     );
