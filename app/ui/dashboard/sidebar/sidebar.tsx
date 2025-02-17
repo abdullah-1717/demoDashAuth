@@ -105,6 +105,12 @@ const Sidebar = () => {
                 justifyContent: "space-between" ,
             }}>
             <Box display="flex" alignItems="center" p={2} borderBottom="1px solid #ddd">
+                <div style={{
+                    border: "2px solid ",
+                    borderRadius: "50%",
+                    padding: "4px",
+                    marginRight: "8px"
+                }}><PersonIcon /></div>
                 <Typography variant="h6">{userName}</Typography>
             </Box>
             <Divider />
