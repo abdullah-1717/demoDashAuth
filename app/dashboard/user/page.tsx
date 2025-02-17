@@ -57,7 +57,7 @@ const UserPage = () => {
                     height: "100vh", 
                     justifyContent: "space-between"
                 }}>
-                    <TableContainer style={{ width: '100%', height: "210px", backgroundColor: '#0c0238', padding: '20px', borderRadius: '8px' }}>
+                    <TableContainer style={{ width: '100%', height: "300px", backgroundColor: '#0c0238', padding: '20px', borderRadius: '8px' }}>
                         <h2 style={{ marginBottom: '20px', color: 'white', fontWeight: "bold", fontSize: "24px" }}>
                             User Details
                         </h2>
